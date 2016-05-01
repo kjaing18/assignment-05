@@ -1,0 +1,56 @@
+//
+//  main.cpp
+//  Assignment5
+//
+//  Created by Katelyn on 4/22/16.
+//  Copyright © 2016 Katelyn. All rights reserved.
+//
+
+#include <iostream>
+#include <vector>
+#include "Point.h"
+#include "Shape.h"
+#include "Rectangle.h"
+#include "Ellipse.h"
+#include "Square.h"
+#include "Circle.h"
+#include <chrono>
+#include <thread>
+
+using std::cout;
+using std::endl;
+using std::vector;
+
+void draw( Shape )
+{
+    
+}
+
+int main() {
+    //declare constants for the number of frames to draw and the
+    //amount of time to sleep after drawing each frame
+    
+    //for each frame
+    //create some shapes (with values depending on the current frame number)
+    
+    //put pointers to them in an array
+    //for example, given a 'Rectangle r' and a 'Square s':
+    Rectangle r;
+    Square s;
+    vector<Shape*> shapes = {&r, &s};
+    //this is possible because 'Rectangles' and 'Squares', and all
+    //your other shapes, inherit from 'Shape'
+    
+    //draw the shapes in the terminal
+    //for example, given the 'shapes' array above:
+    draw( shapes );
+    
+    //wait before drawing the next frame
+    //for example:
+    std::this_thread::sleep_for(std::chrono::milliseconds(frameSleep));
+    //if you'd like to know more about what this line is doing,
+    //look up the documentation for 'std::this_thread::sleep_for' and
+    //'std::chrono::milliseconds()'
+    
+    return 0;
+}
